@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PE. #02 - practical exercise</title>
+	<script type="text/javascript">
+		let count = 0, message="";
+	</script>
+	<style type="text/css">
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0 auto;
+			height: 100vh;
+			font-family: Arial, Helvetica, sans-serif;
+			background: #333;
+			color: #fff;
+		}
+
+		div {
+			font-size: 1.2rem;
+			text-align: center;
+		}
+
+		div p:first-child {
+			color: red;
+		}
+		div p:last-child {
+			color: blue;
+		}
+
+		img {
+			border-radius: 50%;
+			border: 7px dotted yellow;
+			cursor: pointer;
+			padding: 0.3rem;
+			margin: 1rem;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<p>Please click on the image!</p>
+		<img class="image" src="dog.jpeg" onclick="
+		new Audio('dog-hit.mp3').play()
+		count++;
+		if(count==1)
+			{message = 'Этого недостаточно... вы нажали только один раз.'}
+		else if (count>=2 && count<=10)
+			{message = 'Вы нажали ' + count + ' раз... Можно больше.'}
+		else
+			{message = 'Браво! Вы были настойчивы, чтобы нажать ' + count + ' раз.'}
+		document.getElementById('rez').innerHTML=message;">
+		<p id="rez">The number of clicks on the image.</p>
+	</div>
+	
+</body>
+</html>
